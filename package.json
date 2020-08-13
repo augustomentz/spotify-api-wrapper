@@ -1,0 +1,37 @@
+{
+  "name": "spotify-api-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper to work with the [Spotify Web API]",
+  "main": "index.js",
+  "repository": "https://github.com/augustomentz/spotify-api-wrapper.git",
+  "author": "Augusto Mentz",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "pre-commit": "yarn lint",
+    "test": "mocha tests/**/**.spec.js --require babel-register",
+    "test:watch": "mocha tests/**/**.spec.js --require babel-register --watch",
+    "test:coverage": "nyc yarn test"
+  },
+  "nyc": {
+    "reporter": ["text", "html"]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.2.5",
+    "mocha": "^8.1.1",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2"
+  }
+}
