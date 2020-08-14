@@ -24,6 +24,9 @@
       "pre-commit": "yarn pre-commit"
     }
   },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -34,7 +37,6 @@
     "eslint-plugin-import": "^2.22.0",
     "husky": "^4.2.5",
     "mocha": "^8.1.1",
-    "node-fetch": "^2.6.0",
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
     "sinon": "^9.0.3",

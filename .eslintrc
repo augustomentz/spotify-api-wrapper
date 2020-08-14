@@ -10,5 +10,12 @@
         "no-unused-expressions": "off"
       }
    }
-  ]
+  ],
+  "rules": {
+    "no-console": "off"
+  },
+  "globals": {
+    "fetch": false,
+    "context": false
+  }
 }
