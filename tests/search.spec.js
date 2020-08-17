@@ -7,8 +7,8 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 
 import {
-  search, searchAlbuns, searchArtists, searchTracks, searchPlaylists,
-} from '../src/index';
+  search, searchAlbums, searchArtists, searchTracks, searchPlaylists,
+} from '../src/search';
 
 chai.use(sinonChai);
 
@@ -32,8 +32,8 @@ describe('Spotify wrapper', () => {
       expect(search).to.exist;
     });
 
-    it('Should exist the {searchAlbuns} method', () => {
-      expect(searchAlbuns).to.exist;
+    it('Should exist the {searchAlbums} method', () => {
+      expect(searchAlbums).to.exist;
     });
 
     it('Should exist the {searchArtists} method', () => {
@@ -110,20 +110,20 @@ describe('Spotify wrapper', () => {
     });
   });
 
-  describe('searchAlbuns', () => {
+  describe('searchAlbums', () => {
     it('Should call {fetch} function', () => {
-      searchAlbuns('Incubus');
+      searchAlbums('Incubus');
       expect(fetchedStub).to.have.been.calledOnce;
     });
 
     it('Should call fetch with the correct URL', () => {
-      searchAlbuns('Incubus');
+      searchAlbums('Incubus');
       expect(fetchedStub).to.have.been
         .calledWith(
           'https://api.spotify.com/v1/search?q=Incubus&type=album',
         );
 
-      searchAlbuns('Muse');
+      searchAlbums('Muse');
       expect(fetchedStub).to.have.been
         .calledWith(
           'https://api.spotify.com/v1/search?q=Incubus&type=album',
@@ -131,7 +131,7 @@ describe('Spotify wrapper', () => {
     });
   });
 
-  describe('searchAlbuns', () => {
+  describe('searchAlbums', () => {
     it('Should call {fetch} function', () => {
       searchTracks('Incubus');
       expect(fetchedStub).to.have.been.calledOnce;
@@ -152,7 +152,7 @@ describe('Spotify wrapper', () => {
     });
   });
 
-  describe('searchAlbuns', () => {
+  describe('searchAlbums', () => {
     it('Should call {fetch} function', () => {
       searchPlaylists('Incubus');
       expect(fetchedStub).to.have.been.calledOnce;
