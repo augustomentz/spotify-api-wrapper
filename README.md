@@ -216,8 +216,7 @@ spotify.album.getTracks('4aawyAB9vmqN3uQ7FjRGTy')
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
-|:---------------------:|
-|  [Augsuto Mentz](https://github.com/augustomentz)   |
+[Augusto Mentz](https://github.com/augustomentz)   |
 
 ## License
 
