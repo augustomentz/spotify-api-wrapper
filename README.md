@@ -302,6 +302,43 @@ spotify.track.getTracks(['3QbPw4Aj3JgqG0In3ZPZ4q', '7hjAhjnMzpMT9vU54w0LYF'])
     // do what you want with the data
   })
 ```
+### playlist.getPlaylist(id)
+
+> Search a playlist. Test in [Spotify Web Console](https://developer.spotify.com/console/get-playlist/).
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`id`   |*string* | 'Specific id'|
+
+**Example**
+
+```js
+spotify.playlist.getPlaylist('37i9dQZF1DXcmgCctFhSfI')
+  .then(data => {
+    // do what you want with the data
+  })
+```
+
+### playlist.getPlaylistTracks(id)
+
+> Search tracks of a playlist. Test in [Spotify Web Console](https://developer.spotify.com/console/get-playlist-tracks/).
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`id`   |*string* | 'Specific id'|
+
+**Example**
+
+```js
+spotify.playlist.getPlaylistTracks('37i9dQZF1DXcmgCctFhSfI')
+  .then(data => {
+    // do what you want with the data
+  })
+```
 
 ## Authors
 [Augusto Mentz](https://github.com/augustomentz)
