@@ -20,6 +20,7 @@ describe('Album', () => {
 
   beforeEach(() => {
     stubedFetch = sinon.stub(global, 'fetch');
+    stubedFetch.resolves({ json: () => {} });
   });
 
   afterEach(() => {

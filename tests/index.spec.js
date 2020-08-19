@@ -45,6 +45,7 @@ describe('SpotifyWrapper Library', () => {
 
     beforeEach(() => {
       stubedFetch = sinon.stub(global, 'fetch');
+      stubedFetch.resolves({ json: () => {} });
     });
 
     afterEach(() => {

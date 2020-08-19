@@ -7,25 +7,31 @@
 </head>
 <body>
   
-  <div class="albums">
+  <div id="albums">
 
   </div>
 
   <script src="../dist/ahm-spotify-wrapper.umd.min.js"></script>
   <script>
     const spotify = new SpotifyWrapper({
-      token: 'BQCQS8DbOxRjVPEuU8zV7fNTG51UQBziA8H_0y3QBfbGBYcrTbzmB3DkJB5qYeSGidJtISBJNS-Lzh0E3QGguN4jGu7m4k_qzUTeLWntRFmCPofHbq5wUcWgcWNvYxSYFUH0Nm7fGBpXtiaa'
+      token: 'BQBkHuHpyd9Hlw6O-Bd0FZ1JtD8j0DCrnztl4f4QmoViO_f9D0atExj4blwVVcKY7H5zNWGo_kohEf_UrSRW-u2lzT8UH9GULx4i2RIVFIgI8tsKP5SWWFN1Dd_NKtAQZZfGyyiBcaQECwlD'
     })
-    const albums = spotify.search.albums('Incubus')
-    const albumsElement = document.getElementsByClassName('albums')
+
+    const albums = spotify.search.albums('Felicidade Instantânea')
+    const albumsElement = document.getElementById('albums')
 
     albums.then(data => {
-      markup = data.albums.items.map(item => {
-        `<img src"${item.images[0].url}" alt="${item.name}" />`
-      })
-    }).join('')
+      console.log(data);
+      markup = data.albums.items
+                .map(item => 
+                    `<img src='${item.images[0].url}' alt='${item.name}' />`
+                  ).join('');
+
+      console.log(albumsElement);
+      console.log(markup);
+      albumsElement.innerHTML = markup
+    })
   
-    albumsElement.innerHTML = markup
   </script>
 
 </body>

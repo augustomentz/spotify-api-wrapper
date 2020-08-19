@@ -1,5 +1,5 @@
 function searcher(type, query) {
-  this.request(`${this.apiURL}/search?q=${query}&type=${type}`);
+  return this.request(`${this.apiURL}/search?q=${query}&type=${type}`);
 }
 
 export default function search() {
