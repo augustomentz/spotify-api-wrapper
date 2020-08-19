@@ -14,13 +14,14 @@ global.fetch = require('node-fetch');
 
 describe('Album', () => {
   let stubedFetch;
+
   const spotify = new SpotifyWrapper({
     token: 'foo',
   });
 
   beforeEach(() => {
     stubedFetch = sinon.stub(global, 'fetch');
-    stubedFetch.resolves({ json: () => {} });
+    stubedFetch.resolves({ json: () => ({ album: 'name' }) });
   });
 
   afterEach(() => {
@@ -56,6 +57,14 @@ describe('Album', () => {
       expect(stubedFetch)
         .to.be.calledWith('https://api.spotify.com/v1/albums/0sNOF9WDwhWunNAHPD3Bas');
     });
+
+    it('Should return the correct data from Promise', () => {
+      const album = spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTy');
+
+      album.then((data) => {
+        expect(data).to.be.eql({ album: 'name' });
+      });
+    });
   });
 
   describe('getAlbums', () => {
@@ -73,6 +82,14 @@ describe('Album', () => {
       expect(stubedFetch)
         .to.be.calledWith('https://api.spotify.com/v1/albums/?ids=41MnTivkwTO3UUJ8DrqETT,0sNOF9WDwhWunNAHPD3Bak');
     });
+
+    it('Should return the correct data from Promise', () => {
+      const albums = spotify.album.getAlbums(['4aawyAB9vmqN3uQ7FjRGTy', '4aawyAB9vmqN3uQ7FjRGTk']);
+
+      albums.then((data) => {
+        expect(data).to.be.eql({ album: 'name' });
+      });
+    });
   });
 
   describe('getAlbumTracks', () => {
@@ -89,6 +106,14 @@ describe('Album', () => {
       spotify.album.getTracks('0sNOF9WDwhWunNAHPD3Bas');
       expect(stubedFetch)
         .to.be.calledWith('https://api.spotify.com/v1/albums/0sNOF9WDwhWunNAHPD3Bas/tracks');
+    });
+
+    it('Should return the correct data from Promise', () => {
+      const tracks = spotify.album.getTracks('4aawyAB9vmqN3uQ7FjRGTy');
+
+      tracks.then((data) => {
+        expect(data).to.be.eql({ album: 'name' });
+      });
     });
   });
 });

@@ -19,7 +19,7 @@ This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests
 ## Installation
 
 ```sh
-$ npm install spotify-wrapper --save
+$ yarn add ahm-spotify-api-wrapper
 ```
 
 ## How to use
@@ -28,7 +28,7 @@ $ npm install spotify-wrapper --save
 
 ```js
 // to import a specific method
-import SpotifyWrapper from 'spotify-wrapper';
+import SpotifyWrapper from 'ahm-spotify-api-wrapper';
 
 const spotify = new SpotifyWrapper({
   token: 'YOUR_TOKEN_HERE'
@@ -41,7 +41,7 @@ spotify.search.artists('Incubus');
 ### CommonJS
 
 ```js
-const SpotifyWrapper = require('spotify-wrapper').default;
+const SpotifyWrapper = require('ahm-spotify-api-wrapper').default;
 
 const spotify = new SpotifyWrapper({
   token: 'YOUR_TOKEN_HERE'
@@ -51,11 +51,9 @@ const spotify = new SpotifyWrapper({
 ### UMD in Browser
 
 ```html
-<!-- to import non-minified version -->
-<script src="spotify-wrapper.umd.js"></script>
 
 <!-- to import minified version -->
-<script src="spotify-wrapper.umd.min.js"></script>
+<script src="ahm-spotify-wrapper.umd.min.js"></script>
 ```
 
 After that the library will be available to the Global as `SpotifyWrapper`. Follow an example:
@@ -210,10 +208,6 @@ spotify.album.getTracks('4aawyAB9vmqN3uQ7FjRGTy')
     // do what you want with the data
   })
 ```
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 [Augusto Mentz](https://github.com/augustomentz)   |
