@@ -2,6 +2,7 @@
 import search from './search';
 import album from './album';
 import artist from './artist';
+import track from './track';
 
 import API_URL from './config';
 import toJSON from './utils';
@@ -14,6 +15,7 @@ export default class SpotifyWrapper {
     this.search = search.bind(this)();
     this.album = album.bind(this)();
     this.artist = artist.bind(this)();
+    this.track = track.bind(this)();
   }
 
   request(url) {

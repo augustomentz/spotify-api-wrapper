@@ -1,6 +1,3 @@
-// getArtist
-// getArtistAlbums
-// getArtists
 export default function artist() {
   return {
     getArtist: (id) => this.request(`${this.apiURL}/artist/${id}`),

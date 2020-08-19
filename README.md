@@ -265,6 +265,44 @@ spotify.artist.getArtists(['2Jw4Lrfjnyv2QsDoBgnrAP', '3qm84nBOXUEQ2vnTfUTTFC'])
   })
 ```
 
+### track.getTrack(id)
+
+> Search a track of an Artist. Test in [Spotify Web Console](https://developer.spotify.com/console/get-track/).
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`id`   |*string* | 'Specific id'|
+
+**Example**
+
+```js
+spotify.track.getTrack('3QbPw4Aj3JgqG0In3ZPZ4q')
+  .then(data => {
+    // do what you want with the data
+  })
+```
+
+### track.getTracks(ids)
+
+> Search tracks of an Artist with all id's. Test in [Spotify Web Console](https://developer.spotify.com/console/get-several-tracks/).
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`ids`   |*Array of strings* | ['id1', 'id2']|
+
+**Example**
+
+```js
+spotify.track.getTracks(['3QbPw4Aj3JgqG0In3ZPZ4q', '7hjAhjnMzpMT9vU54w0LYF'])
+  .then(data => {
+    // do what you want with the data
+  })
+```
+
 ## Authors
 [Augusto Mentz](https://github.com/augustomentz)
 
