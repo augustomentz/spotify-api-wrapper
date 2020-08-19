@@ -150,7 +150,6 @@ spotify.search.playlists('Happy Day')
     // do what you want with the data
   })
 ```
-
 ### album.getAlbum(id)
 
 > Search for informations about a specific Album with provided id. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-album/).
@@ -209,8 +208,65 @@ spotify.album.getTracks('4aawyAB9vmqN3uQ7FjRGTy')
   })
 ```
 
+### artist.getArtist(id)
+
+> Search for a specific Artist. Test in [Spotify Web Console](https://developer.spotify.com/console/get-artist/).
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`id`   |*string* | 'Specific id'|
+
+**Example**
+
+```js
+spotify.artist.getArtist('2Jw4Lrfjnyv2QsDoBgnrAP')
+  .then(data => {
+    // do what you want with the data
+  })
+```
+
+### artist.getArtistAlbums(id)
+
+> Search all albums of an Artist. Test in [Spotify Web Console](https://developer.spotify.com/console/get-artist-albums/).
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`id`   |*string* | 'Specific id'|
+
+**Example**
+
+```js
+spotify.artist.getArtistAlbums('2Jw4Lrfjnyv2QsDoBgnrAP')
+  .then(data => {
+    // do what you want with the data
+  })
+```
+
+### artist.getArtists(ids)
+
+> Search for informations about some Artists with all id's. Test in [Spotify Web Console](https://developer.spotify.com/console/get-several-artists/).
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`ids`   |*Array of strings* | ['id1', 'id2']|
+
+**Example**
+
+```js
+spotify.artist.getArtists(['2Jw4Lrfjnyv2QsDoBgnrAP', '3qm84nBOXUEQ2vnTfUTTFC'])
+  .then(data => {
+    // do what you want with the data
+  })
+```
+
 ## Authors
-[Augusto Mentz](https://github.com/augustomentz)   |
+[Augusto Mentz](https://github.com/augustomentz)
 
 ## License
 
